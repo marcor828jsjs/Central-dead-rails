@@ -1,0 +1,34 @@
+-- Central.lua
+-- Lista de URLs raw dos scripts individuais
+local scriptUrls = {
+    "https://raw.githubusercontent.com/marcor828jsjs/3-pessoa/main/3%C2%B0%20pessoa.lua",
+    "https://raw.githubusercontent.com/marcor828jsjs/Gui-dead/main/Gui%20dead%20rails.lua",
+    "https://raw.githubusercontent.com/marcor828jsjs/Ilumina-o-eterna/main/Iluminação%20dead%20rails.lua",
+}
+
+-- Função para baixar e executar cada script
+for _, url in ipairs(scriptUrls) do
+    -- Opcional: printar qual URL está sendo carregada
+    print("[Central] Carregando script de:", url)
+    local ok, err = pcall(function()
+        -- game:HttpGet no Roblox; em alguns executores, pode ser diferente:
+        local httpService = game:GetService("HttpService")
+        -- Se o executor fornecer game:HttpGet, use:
+        local content = game:HttpGet and game:HttpGet(url, true) or httpService:GetAsync(url)
+        -- Em alguns ambientes de executor, HttpGet pode exigir headers ou flags; adapte se necessário.
+
+        -- loadstring retorna função ou erro
+        local fn, loadErr = loadstring(content)
+        if not fn then
+            error("Falha no loadstring: " .. tostring(loadErr))
+        end
+
+        -- Executa o script baixado
+        fn()
+    end)
+    if not ok then
+        warn("[Central] Erro ao executar script de " .. url .. ": " .. tostring(err))
+    else
+        print("[Central] Script de " .. url .. " executado com sucesso.")
+    end
+end
