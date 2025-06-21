@@ -3,7 +3,8 @@
 local urls = {
     "https://raw.githubusercontent.com/marcor828jsjs/3-pessoa/main/3%C2%B0%20pessoa",
     "https://raw.githubusercontent.com/marcor828jsjs/Gui-dead/main/Gui%20dead%20rails",
-    "https://raw.githubusercontent.com/marcor828jsjs/Ilumina-o-eterna/main/Ilumina%C3%A7%C3%A3o%20dead%20rails"
+    "https://raw.githubusercontent.com/marcor828jsjs/Ilumina-o-eterna/main/Ilumina%C3%A7%C3%A3o%20dead%20rails",
+    "https://raw.githubusercontent.com/marcor828jsjs/Esp-e-etc-dead-rail-central/main/Dead"
 }
 
 for i, url in ipairs(urls) do
