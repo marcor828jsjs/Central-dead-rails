@@ -4,7 +4,8 @@ local urls = {
     "https://raw.githubusercontent.com/marcor828jsjs/Ilumina-o-eterna/main/Ilumina%C3%A7%C3%A3o%20dead%20rails",
     "https://raw.githubusercontent.com/marcor828jsjs/Esp-e-etc-dead-rail-central/main/Dead",
     "https://raw.githubusercontent.com/marcor828jsjs/Contabilizador-bonds/main/Contabilidade%20Bonds",
-    "https://raw.githubusercontent.com/marcor828jsjs/N-meros-banco-dead-rails/main/Dead"
+    "https://raw.githubusercontent.com/marcor828jsjs/N-meros-banco-dead-rails/main/Dead",
+    "https://raw.githubusercontent.com/marcor828jsjs/Auto-trem-dead-rails/main/Auto%20trem" -- novo repositório adicionado
 }
 
 for i, url in ipairs(urls) do
