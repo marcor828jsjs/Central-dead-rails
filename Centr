@@ -1,12 +1,11 @@
--- Executa os outros normalmente
 local urls = {
     "https://raw.githubusercontent.com/marcor828jsjs/3-pessoa/main/3%C2%B0%20pessoa",
+    "https://raw.githubusercontent.com/marcor828jsjs/Gui-dead/main/Gui%20dead%20rails",
     "https://raw.githubusercontent.com/marcor828jsjs/Ilumina-o-eterna/main/Ilumina%C3%A7%C3%A3o%20dead%20rails",
     "https://raw.githubusercontent.com/marcor828jsjs/Esp-e-etc-dead-rail-central/main/Dead",
     "https://raw.githubusercontent.com/marcor828jsjs/Contabilizador-bonds/main/Contabilidade%20Bonds",
     "https://raw.githubusercontent.com/marcor828jsjs/N-meros-banco-dead-rails/main/Dead",
-    "https://raw.githubusercontent.com/marcor828jsjs/Auto-trem-dead-rails/main/Auto%20trem",
-    "https://raw.githubusercontent.com/marcor828jsjs/Auto-hit-dead-rails/main/Hit"
+    "https://raw.githubusercontent.com/marcor828jsjs/Auto-trem-dead-rails/main/Auto%20trem", -- novo script Auto-hit
 }
 
 for i, url in ipairs(urls) do
@@ -24,22 +23,4 @@ for i, url in ipairs(urls) do
     else
         warn("Erro ao carregar URL #" .. i .. ": " .. tostring(response))
     end
-
-    task.wait(1)
-end
-
--- Executar o mainringta separado
-local ok, content = pcall(function()
-    return game:HttpGet("https://raw.githubusercontent.com/wefwef127382/DEADRAILS.github.io/main/mainringta.lua")
-end)
-
-if ok and content then
-    local success, err = pcall(function()
-        loadstring(content)()
-    end)
-    if not success then
-        warn("Erro ao rodar script principal: " .. tostring(err))
-    end
-else
-    warn("Erro ao carregar script principal: " .. tostring(content))
 end
